@@ -1,0 +1,19 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner"></div>
+
+<div class="content" role="main">
+  <mat-card>
+    <mat-card-title>{{ title }}</mat-card-title>
+    <mat-card-subtitle>{{ description }}</mat-card-subtitle>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Pull Requests</mat-card-title>
+    <mat-card *ngFor="let data of pullRequests | async">
+      <mat-card-title>data.title</mat-card-title>
+    </mat-card>
+  </mat-card>
+
+  <!-- Footer -->
+  <footer></footer>
+</div>
