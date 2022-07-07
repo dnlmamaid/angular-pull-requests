@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { PullRequest } from '../models/pull-requests';
 import { Repository } from '../models/repository';
 
 @Injectable({
@@ -15,15 +16,16 @@ export class AngularService {
     );
   }
 
-  getAngularRepositoryPullRequests(): Observable<any> {
-    return this.http.get<any>(
+  getAngularRepositoryPullRequests(): Observable<Array<PullRequest>> {
+    return this.http.get<Array<PullRequest>>(
       `https://api.github.com/repos/angular/angular/pulls`
     );
   }
 
-  getAngularRepositoryPullRequestById(prId: string): Observable<any> {
-    return this.http.get(
-      `https://api.github.com/repos/angular/angular/pulls/${prId}`
-    );
+  getAngularRepositoryPullRequestById(prId: string): Observable<PullRequest> {
+    return this.http
+      .get<PullRequest>(
+        `https://api.github.com/repos/angular/angular/pulls/${prId}`
+      );
   }
 }
