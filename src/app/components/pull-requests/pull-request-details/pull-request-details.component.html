@@ -1,0 +1,26 @@
+<div *ngIf="pullRequest !== undefined">
+  <mat-card>
+    <mat-card-title>PR#{{ pullRequest.number }} - {{ pullRequest.title }}
+      <span class="state">{{ pullRequest.state }}</span></mat-card-title>
+    <mat-card-subtitle>{{ pullRequest.created_at | date: "full" }}</mat-card-subtitle>
+
+
+      <ng-container *ngIf="pullRequest.requested_reviewers.length > 0; else reviewers">
+        <div class="reviewers-container">
+          <div class="reviewers-header"><mat-icon aria-hidden="false" aria-label="user icon">group</mat-icon>  Reviewers</div>
+          <mat-list *ngFor="let reviewer of pullRequest.requested_reviewers">
+            <mat-list-item> <mat-icon aria-hidden="false" aria-label="user icon">person</mat-icon> {{ reviewer.login }} </mat-list-item>
+          </mat-list>
+        </div>
+      </ng-container>
+
+      <ng-template #reviewers>
+        <h3>No required reviewers.</h3>
+      </ng-template>
+
+
+    <button class="align-right" mat-button color="primary" (click)="navigateToDashboard()">
+      Back
+    </button>
+  </mat-card>
+</div>

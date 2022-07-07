@@ -1,0 +1,26 @@
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.request-container {
+  display:flex;
+  align-items: center;
+}
+
+.state {
+  border: 2px solid green;
+  background-color: green;
+  color: white;
+  font-size: small;
+  padding: 5px;
+  margin: auto 15px;
+  border-radius: 25px;
+}
+
+.open {
+  border: 2px solid red;
+}
+
+.closed {
+  border: 2px solid red;
+}

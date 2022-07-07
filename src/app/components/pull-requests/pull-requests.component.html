@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-title>Pull Requests</mat-card-title>
+  <mat-card class="mb-10" *ngFor="let pr of pullRequests$ | async">
+    <div class="request-container" (click)="openPullRequest(pr)">
+      <mat-card-title>
+        <span class="state">{{ pr.state }}</span>
+        {{ pr.title }}
+      </mat-card-title>
+    </div>
+  </mat-card>
+</mat-card>

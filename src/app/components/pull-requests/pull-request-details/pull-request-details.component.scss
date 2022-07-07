@@ -1,0 +1,26 @@
+.state {
+  border: 2px solid green;
+  background-color: green;
+  color: white;
+  font-size: small;
+  padding: 5px;
+  margin: auto 15px;
+  border-radius: 25px;
+}
+
+mat-icon {
+  color: #471800;
+}
+
+.reviewers-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reviewers-header{
+  font: bold;
+  font-size: large;
+  vertical-align: middle;
+}
+
