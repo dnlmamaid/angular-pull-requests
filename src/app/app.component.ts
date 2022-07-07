@@ -7,10 +7,10 @@ import { AngularService } from './services/angular.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  public pullRequests$: any;
   public title: string = 'angular-pull-requests';
   public description!: string;
   public fullRepositoryName!: string;
-  public pullRequests: any;
 
   constructor(private angularService: AngularService) {}
 
@@ -19,10 +19,6 @@ export class AppComponent implements OnInit {
       this.fullRepositoryName = res.full_name;
       this.title = this.fullRepositoryName;
       this.description = res.description;
-    });
-
-    this.angularService.getAngularRepositoryPullRequests().subscribe((res) => {
-      console.log(res);
     });
   }
 }

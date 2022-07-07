@@ -1,0 +1,14 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+.content {
+  margin: 100px auto;
+  width: 50%;
+}
+
+mat-toolbar {
+  background-color: #471800;
+  color: #ffff; //#f55a00;
+}
+
